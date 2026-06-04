@@ -48,7 +48,7 @@ const projectsData = [
       'Highly Responsive Layout'
     ],
     liveUrl: 'https://space-portfolio.demo',
-    codeUrl: 'https://github.com/example/space-portfolio'
+    codeUrl: 'https://github.com/GaganKhandale/Space-Portfolio'
   },
   {
     id: 'traffic',
