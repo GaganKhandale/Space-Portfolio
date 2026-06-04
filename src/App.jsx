@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import StarryBackground from './components/StarryBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -6,7 +6,8 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import ResumePage from './components/ResumePage';
+
+const ResumePage = lazy(() => import('./components/ResumePage'));
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 
@@ -122,7 +123,9 @@ function App() {
       </div>
 
       {currentView === 'resume' ? (
-        <ResumePage setView={setView} />
+        <Suspense fallback={<div className="loading-fallback">LOADING SECURE PROTOCOLS...</div>}>
+          <ResumePage setView={setView} />
+        </Suspense>
       ) : (
         <>
           {/* Core sections */}

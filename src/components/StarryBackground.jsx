@@ -78,7 +78,9 @@ const StarryBackground = () => {
         });
       }
 
-      shootingStars.forEach((sStar, idx) => {
+      for (let i = shootingStars.length - 1; i >= 0; i--) {
+        const sStar = shootingStars[i];
+
         // Draw the glowing tail (gradient from cyan-teal to transparent)
         const grad = ctx.createLinearGradient(
           sStar.x, sStar.y, 
@@ -94,23 +96,26 @@ const StarryBackground = () => {
         ctx.lineTo(sStar.x - sStar.len, sStar.y - sStar.len * 0.35);
         ctx.stroke();
 
-        // Draw the bright white head dot with neon teal glow
-        ctx.shadowColor = '#00dfc0';
-        ctx.shadowBlur = 10;
-        ctx.fillStyle = '#ffffff';
+        // Draw a glowing outer circle instead of slow CPU-based shadowBlur
+        ctx.beginPath();
+        ctx.arc(sStar.x, sStar.y, 6, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0, 223, 192, ${sStar.alpha * 0.4})`;
+        ctx.fill();
+
+        // Draw the bright white head dot
         ctx.beginPath();
         ctx.arc(sStar.x, sStar.y, 2.2, 0, Math.PI * 2);
+        ctx.fillStyle = '#ffffff';
         ctx.fill();
-        ctx.shadowBlur = 0; // reset shadow glow for other drawings
 
         sStar.x += sStar.dx * dt;
         sStar.y += sStar.dy * dt;
         sStar.alpha -= sStar.fade * dt;
 
         if (sStar.alpha <= 0) {
-          shootingStars.splice(idx, 1);
+          shootingStars.splice(i, 1);
         }
-      });
+      }
     };
 
     let lastTime = performance.now();
