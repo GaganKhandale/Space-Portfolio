@@ -73,8 +73,11 @@ const Contact = ({ isModalOpen, setIsModalOpen }) => {
       const easeProgress = easeInOutCubic(mappedProgress);
 
       // Moon transform and opacity updates
+      const isMobile = window.innerWidth <= 768;
       const moonScale = 3.8 - 3.3 * easeProgress;
-      const moonTx = 570 * (1 - easeProgress);
+      const moonTx = isMobile 
+        ? 410 + 160 * (1 - easeProgress) 
+        : 570 * (1 - easeProgress);
       const moonTy = 100 * (1 - easeProgress);
       if (moonGroupRef.current) {
         moonGroupRef.current.style.transform = `translate(${moonTx}px, ${moonTy}px) scale(${moonScale})`;
@@ -86,6 +89,11 @@ const Contact = ({ isModalOpen, setIsModalOpen }) => {
       // Mountains transform updates
       if (mountainsGroupRef.current) {
         mountainsGroupRef.current.style.opacity = mappedProgress;
+        if (isMobile) {
+          mountainsGroupRef.current.style.transform = 'scaleX(0.42) translateY(20px)';
+        } else {
+          mountainsGroupRef.current.style.transform = 'none';
+        }
       }
       if (farMountainsRef.current) {
         farMountainsRef.current.style.transform = `translateY(${(1 - easeProgress) * 20}px)`;
