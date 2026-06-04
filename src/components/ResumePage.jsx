@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { ArrowDown, ArrowLeft, RefreshCw, Radio } from 'lucide-react';
+import { ArrowDown, ArrowLeft, RefreshCw, Radio, FileText, ExternalLink } from 'lucide-react';
 
 const ResumePage = ({ setView }) => {
   const scrollContainerRef = useRef(null);
@@ -226,8 +226,11 @@ const ResumePage = ({ setView }) => {
             </div>
 
             <div className="header-actions">
+              <button className="action-btn back-btn" onClick={() => setView('main')} title="Return to Home">
+                <ArrowLeft size={16} /> BACK
+              </button>
               <button className="action-btn download-btn" onClick={handleDownload} title="Download PDF Resume">
-                <ArrowDown size={20} /> DOWNLOAD
+                <ArrowDown size={16} /> DOWNLOAD
               </button>
             </div>
           </div>
@@ -239,6 +242,39 @@ const ResumePage = ({ setView }) => {
               className="resume-pdf-iframe"
               title="Gagan Khandale Resume PDF"
             />
+            <div className="resume-mobile-fallback">
+              <div className="fallback-card">
+                <div className="fallback-glow"></div>
+                <div className="scanner-line"></div>
+                <div className="document-icon-wrapper">
+                  <FileText className="fallback-icon" size={48} />
+                </div>
+                <h3 className="fallback-title">RESUME_TRANSMISSION.pdf</h3>
+                <p className="fallback-subtitle">Futuristic Core Protocol v4.0</p>
+                <div className="fallback-details">
+                  <div className="detail-row">
+                    <span>FILE TYPE</span>
+                    <span className="detail-value">PDF DOCUMENT</span>
+                  </div>
+                  <div className="detail-row">
+                    <span>SIZE</span>
+                    <span className="detail-value">350 KB</span>
+                  </div>
+                  <div className="detail-row">
+                    <span>STATUS</span>
+                    <span className="detail-value text-green">ONLINE / READY</span>
+                  </div>
+                </div>
+                <div className="fallback-actions">
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="fallback-btn view-btn">
+                    <ExternalLink size={16} /> VIEW PDF
+                  </a>
+                  <button onClick={handleDownload} className="fallback-btn download-btn-mobile">
+                    <ArrowDown size={16} /> DOWNLOAD
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

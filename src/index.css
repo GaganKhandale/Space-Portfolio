@@ -574,6 +574,7 @@ p {
   justify-content: space-between;
   gap: 3rem;
   position: relative;
+  overflow: visible !important;
 }
 
 .skills-left-visual {
@@ -583,7 +584,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: visible !important;
 }
 
 .skills-text-content {
@@ -621,6 +622,7 @@ p {
   transform: translateY(-50%) scaleY(0.35);
   width: 650px;
   height: 650px;
+  overflow: visible !important;
 }
 
 .solar-sun {
@@ -632,7 +634,7 @@ p {
   height: 480px;
   border-radius: 50%;
   background: radial-gradient(circle, #ffe600 0%, #ff8000 30%, #ff3c00 60%, transparent 80%);
-  box-shadow: 0 0 100px rgba(255, 60, 0, 0.75), 0 0 200px rgba(255, 128, 0, 0.45);
+  box-shadow: 0 0 75px rgba(255, 60, 0, 0.5), 0 0 150px rgba(255, 128, 0, 0.3);
   z-index: 1;
 }
 
@@ -1687,75 +1689,84 @@ p {
     align-items: center;
   }
 
+  .skills-left-visual {
+    height: 520px !important;
+    width: 100% !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
   .solar-system {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: scaleY(0.35);
-    margin: 0 auto;
-    width: 100%;
-    max-width: 450px;
-    height: 450px;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(0, -50%) scaleY(0.35) !important;
+    width: 650px !important;
+    height: 650px !important;
+    margin: 0 !important;
+    overflow: visible !important;
   }
 
   .solar-sun {
-    width: 220px;
-    height: 220px;
-    left: 50%;
-    transform: translate(-50%, -50%) scaleY(2.85);
-  }
-
-  .solar-orbit {
-    left: auto;
-    top: auto;
-    transform: none;
+    width: 180px !important;
+    height: 180px !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scaleY(2.85) !important;
   }
 
   .solar-orbit-1 {
-    width: 280px;
-    height: 280px;
-    left: 85px;
-    top: 85px;
+    width: 240px !important;
+    height: 240px !important;
+    left: -120px !important;
+    top: 205px !important;
   }
 
   .solar-orbit-2 {
-    width: 340px;
-    height: 340px;
-    left: 55px;
-    top: 55px;
+    width: 300px !important;
+    height: 300px !important;
+    left: -150px !important;
+    top: 175px !important;
   }
 
   .solar-orbit-3 {
-    width: 400px;
-    height: 400px;
-    left: 25px;
-    top: 25px;
+    width: 360px !important;
+    height: 360px !important;
+    left: -180px !important;
+    top: 145px !important;
   }
 
   .solar-orbit-4 {
-    width: 460px;
-    height: 460px;
-    left: -5px;
-    top: -5px;
+    width: 420px !important;
+    height: 420px !important;
+    left: -210px !important;
+    top: 115px !important;
   }
 
   .solar-orbit-5 {
-    width: 520px;
-    height: 520px;
-    left: -35px;
-    top: -35px;
+    width: 480px !important;
+    height: 480px !important;
+    left: -240px !important;
+    top: 85px !important;
   }
 
   .solar-orbit-6 {
-    width: 580px;
-    height: 580px;
-    left: -65px;
-    top: -65px;
+    width: 540px !important;
+    height: 540px !important;
+    left: -270px !important;
+    top: 55px !important;
+  }
+
+  .solar-orbit-7 {
+    width: 600px !important;
+    height: 600px !important;
+    left: -300px !important;
+    top: 25px !important;
   }
 
   .planet-sphere {
-    width: 32px;
-    height: 32px;
+    width: 32px !important;
+    height: 32px !important;
   }
 
   .projects-container {
@@ -1806,6 +1817,123 @@ p {
   .contact-header::before,
   .contact-header::after {
     display: none;
+  }
+
+  /* About Section Galaxy Nodes Stack on Mobile */
+  .about-graphic-container {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin-top: 24px !important;
+    width: 100% !important;
+  }
+
+  .galaxy-canvas {
+    height: 280px !important;
+    width: 100% !important;
+    max-height: 280px !important;
+  }
+
+  .galaxy-node {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    width: 90% !important;
+    max-width: 320px !important;
+    transform: none !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Skills Section Solar System centered and contained on Mobile */
+  .skills-left-visual {
+    height: 380px !important;
+    width: 100% !important;
+    overflow: visible !important;
+    position: relative !important;
+    margin-top: 50px !important;
+  }
+
+  .solar-system {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(0, -50%) scaleY(0.35) !important;
+    width: 650px !important;
+    height: 650px !important;
+    margin: 0 !important;
+  }
+
+  .solar-sun {
+    width: 80px !important;
+    height: 80px !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) scaleY(2.85) !important;
+  }
+
+  .solar-orbit-1 {
+    width: 120px !important;
+    height: 120px !important;
+    left: -60px !important;
+    top: 265px !important;
+  }
+
+  .solar-orbit-2 {
+    width: 155px !important;
+    height: 155px !important;
+    left: -77.5px !important;
+    top: 247.5px !important;
+  }
+
+  .solar-orbit-3 {
+    width: 190px !important;
+    height: 190px !important;
+    left: -95px !important;
+    top: 230px !important;
+  }
+
+  .solar-orbit-4 {
+    width: 225px !important;
+    height: 225px !important;
+    left: -112.5px !important;
+    top: 212.5px !important;
+  }
+
+  .solar-orbit-5 {
+    width: 260px !important;
+    height: 260px !important;
+    left: -130px !important;
+    top: 195px !important;
+  }
+
+  .solar-orbit-6 {
+    width: 295px !important;
+    height: 295px !important;
+    left: -147.5px !important;
+    top: 177.5px !important;
+  }
+
+  .solar-orbit-7 {
+    width: 330px !important;
+    height: 330px !important;
+    left: -165px !important;
+    top: 160px !important;
+  }
+
+  .planet-sphere {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.65rem !important;
+  }
+
+  .planet-label {
+    font-size: 0.5rem !important;
+    margin-top: 3px !important;
   }
 }
 
@@ -2378,18 +2506,22 @@ p {
   background: #ffffff;
 }
 
+/* Resume mobile fallback - hidden on desktop */
+.resume-mobile-fallback {
+  display: none;
+}
+
 /* Small screen adjustments for Resume */
 @media (max-width: 768px) {
   .resume-module-anchor {
-    width: 95%;
-    height: 2000px;
+    width: 92%;
+    height: 580px;
     margin-top: 80px;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 
   .hud-overlay {
     display: none;
-
     /* Hide complex HUD on small screens to avoid clutter */
   }
 
@@ -2401,6 +2533,229 @@ p {
 
   .antenna {
     display: none;
+  }
+
+  .resume-module-header {
+    padding: 8px 12px;
+    height: 46px;
+  }
+
+  .header-title {
+    font-size: 0.85rem;
+  }
+
+  .action-btn {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    gap: 4px;
+    border-radius: 5px;
+  }
+
+  .resume-viewport {
+    height: calc(100% - 46px);
+  }
+
+  .resume-pdf-iframe {
+    display: none !important;
+  }
+
+  .resume-mobile-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Fallback Card Styling */
+  .fallback-card {
+    position: relative;
+    width: 100%;
+    max-width: 340px;
+    background: rgba(6, 18, 36, 0.75);
+    border: 1px solid rgba(0, 255, 204, 0.25);
+    border-radius: 12px;
+    padding: 24px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 255, 204, 0.08), inset 0 0 15px rgba(0, 255, 204, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Scanner laser animation */
+  .scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+    box-shadow: 0 0 8px var(--accent-teal);
+    animation: scanAnimation 3.5s infinite linear;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  @keyframes scanAnimation {
+    0% {
+      top: 0%;
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  .document-icon-wrapper {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    background: rgba(0, 255, 204, 0.08);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.1);
+  }
+
+  .fallback-glow {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(circle, rgba(0, 255, 204, 0.15) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: glowPulse 2s infinite ease-in-out alternate;
+  }
+
+  @keyframes glowPulse {
+    0% {
+      transform: translate(-50%, -50%) scale(0.95);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 1;
+    }
+  }
+
+  .fallback-icon {
+    color: var(--accent-teal);
+    filter: drop-shadow(0 0 6px rgba(0, 255, 204, 0.5));
+  }
+
+  .fallback-title {
+    font-family: var(--font-mono);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 0 4px 0;
+    letter-spacing: 0.05em;
+  }
+
+  .fallback-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .fallback-details {
+    width: 100%;
+    border-top: 1px dashed rgba(255, 255, 255, 0.15);
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+    padding: 12px 0;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .detail-row {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .detail-value {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  .detail-value.text-green {
+    color: #00ffcc;
+    text-shadow: 0 0 5px rgba(0, 255, 204, 0.4);
+  }
+
+  .fallback-actions {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+  }
+
+  .fallback-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-sizing: border-box;
+  }
+
+  .fallback-btn.view-btn {
+    background: transparent;
+    border: 1.5px solid var(--accent-teal);
+    color: var(--accent-teal);
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.1);
+  }
+
+  .fallback-btn.view-btn:hover {
+    background: rgba(0, 255, 204, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.25);
+  }
+
+  .fallback-btn.download-btn-mobile {
+    background: var(--accent-teal);
+    border: 1.5px solid var(--accent-teal);
+    color: var(--bg-deep);
+  }
+
+  .fallback-btn.download-btn-mobile:hover {
+    background: #00e6b8;
+    border-color: #00e6b8;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.35);
   }
 }
 

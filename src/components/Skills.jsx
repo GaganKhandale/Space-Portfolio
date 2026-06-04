@@ -524,11 +524,11 @@ const Skills = ({ activeSection }) => {
 
   return (
     <section id="skills" className="section" style={{ overflow: 'hidden' }}>
-      <div className="skills-container">
+      <div className="skills-container" style={{ overflow: 'visible' }}>
 
         {/* Left Visual: Solar System */}
-        <div ref={visualContainerRef} className="skills-left-visual">
-          <div className={`solar-system ${isPaused ? 'paused' : ''}`}>
+        <div ref={visualContainerRef} className="skills-left-visual" style={{ overflow: 'visible' }}>
+          <div className={`solar-system ${isPaused ? 'paused' : ''}`} style={{ overflow: 'visible' }}>
 
             {/* The Sun */}
             <div className="solar-sun" />

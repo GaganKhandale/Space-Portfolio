@@ -59,7 +59,7 @@ const About = () => {
     const drawGalaxy = (dt) => {
       ctx.clearRect(0, 0, width, height);
       
-      const cx = width / 2 + 60; // Shifted center towards the right
+      const cx = width < 768 ? width / 2 : width / 2 + 60; // Centered on mobile, shifted right on desktop
       const cy = height / 2;
 
       // Draw dashed orbit rings (tilted)
