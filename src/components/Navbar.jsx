@@ -51,7 +51,11 @@ const Navbar = ({ activeSection, style, currentView, setView }) => {
 
   return (
     <nav className={`navbar ${isScrolled || currentView === 'resume' ? 'scrolled' : ''}`} style={style}>
-      <div className="logo-container" onClick={() => handleNavClick('home')}>
+      <div 
+        className="logo-container" 
+        onClick={() => handleNavClick('home')}
+        style={currentView === 'resume' ? { visibility: 'hidden' } : {}}
+      >
         <span className="logo-text">G</span>
       </div>
 
