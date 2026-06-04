@@ -90,7 +90,7 @@ const Contact = ({ isModalOpen, setIsModalOpen }) => {
       if (mountainsGroupRef.current) {
         mountainsGroupRef.current.style.opacity = mappedProgress;
         if (isMobile) {
-          mountainsGroupRef.current.style.transform = 'scaleX(0.42) translateY(20px)';
+          mountainsGroupRef.current.style.transform = 'scaleX(0.65) translateX(30px) translateY(10px)';
         } else {
           mountainsGroupRef.current.style.transform = 'none';
         }
