@@ -611,11 +611,19 @@ const Projects = () => {
             svgScale = H / 900;
           }
 
+          const isMobile = window.innerWidth <= 768;
           const footerMoonPx = 220 * 3.8 * svgScale;
-          const projectsMoonPx = 76;
+          const projectsMoonPx = isMobile ? 44 : 76;
           const maxScale = footerMoonPx / projectsMoonPx;
           const moonScale = 1.0 + easeZoom * (maxScale - 1.0);
-          const moonOpacity = lerpedProgress > 0.50 ? Math.max(0, 1 - (lerpedProgress - 0.50) / 0.10) : 1;
+          
+          let moonOpacity = 1.0;
+          if (isMobile) {
+            moonOpacity = 1.0 - easeZoom * 0.82; // Make moon transparent as it zooms in
+          }
+          if (lerpedProgress > 0.50) {
+            moonOpacity = Math.max(0, moonOpacity - (lerpedProgress - 0.50) / 0.10);
+          }
 
           moonEl.style.opacity = moonOpacity;
 

@@ -1790,6 +1790,8 @@ p {
 
 @media (max-width: 768px) {
   .globe-moon {
+    width: 44px !important;
+    height: 44px !important;
     pointer-events: none;
   }
 
