@@ -222,7 +222,7 @@ const ResumePage = ({ setView }) => {
               <span className="terminal-dots">
                 <span></span><span></span><span></span>
               </span>
-              <span className="header-title">RESUME • GAGAN</span>
+              <span className="header-title">RESUME GAGAN</span>
             </div>
 
             <div className="header-actions">
