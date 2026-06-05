@@ -1789,6 +1789,10 @@ p {
 }
 
 @media (max-width: 768px) {
+  .globe-moon {
+    pointer-events: none;
+  }
+
   .navbar {
     padding: 0 20px;
   }
