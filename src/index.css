@@ -702,31 +702,31 @@ p {
 
 /* Orbit speeds - custom speed for each planet */
 .orbit-speed-1 {
-  animation-duration: 25s;
+  animation-duration: 13s;
 }
 
 .orbit-speed-2 {
-  animation-duration: 35s;
+  animation-duration: 15s;
 }
 
 .orbit-speed-3 {
-  animation-duration: 45s;
+  animation-duration: 18s;
 }
 
 .orbit-speed-4 {
-  animation-duration: 55s;
+  animation-duration: 21s;
 }
 
 .orbit-speed-5 {
-  animation-duration: 65s;
+  animation-duration: 24s;
 }
 
 .orbit-speed-6 {
-  animation-duration: 75s;
+  animation-duration: 29s;
 }
 
 .orbit-speed-7 {
-  animation-duration: 85s;
+  animation-duration: 35s;
 }
 
 .solar-planet {
@@ -2395,9 +2395,11 @@ p {
   height: calc(100% - 60px);
   background: rgba(2, 7, 18, 0.97);
   /* Slightly higher opacity for a cleaner solid feel */
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle dark border instead of green */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Subtle dark border instead of green */
   border-radius: 12px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Deep shadow instead of green glow */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  /* Deep shadow instead of green glow */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -2411,8 +2413,10 @@ p {
   justify-content: space-between;
   align-items: center;
   padding: 10px 16px;
-  background: rgba(255, 255, 255, 0.02); /* Neutral background */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Subtle line instead of green */
+  background: rgba(255, 255, 255, 0.02);
+  /* Neutral background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  /* Subtle line instead of green */
   height: 50px;
 }
 
@@ -2613,12 +2617,15 @@ p {
       top: 0%;
       opacity: 0;
     }
+
     5% {
       opacity: 1;
     }
+
     95% {
       opacity: 1;
     }
+
     100% {
       top: 100%;
       opacity: 0;
@@ -2656,6 +2663,7 @@ p {
       transform: translate(-50%, -50%) scale(0.95);
       opacity: 0.6;
     }
+
     100% {
       transform: translate(-50%, -50%) scale(1.1);
       opacity: 1;
@@ -2765,9 +2773,12 @@ p {
 
 /* Pathway lights pulsing glow animation */
 @keyframes pathwayPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.25;
   }
+
   50% {
     opacity: 1.0;
   }
@@ -2802,6 +2813,7 @@ p {
     opacity: 0.6;
     transform: scale(0.98);
   }
+
   100% {
     opacity: 1;
     transform: scale(1.0);

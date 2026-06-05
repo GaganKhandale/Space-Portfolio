@@ -340,7 +340,7 @@ const Projects = () => {
     let height = (canvas.height = (parent ? parent.clientHeight : 500) || 500);
 
     let rotation = 0; // Current longitude rotation offset (radians)
-    const rotationSpeed = 0.003;
+    const rotationSpeed = 0.005;
 
     const updateOffsets = () => {
       const containerEl = document.querySelector('.projects-container');
@@ -616,7 +616,7 @@ const Projects = () => {
           const projectsMoonPx = isMobile ? 44 : 76;
           const maxScale = footerMoonPx / projectsMoonPx;
           const moonScale = 1.0 + easeZoom * (maxScale - 1.0);
-          
+
           let moonOpacity = 1.0;
           if (isMobile) {
             moonOpacity = 1.0 - easeZoom * 0.82; // Make moon transparent as it zooms in
