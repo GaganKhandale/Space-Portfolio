@@ -409,7 +409,7 @@ const Projects = () => {
       const cx = width / 2;
       const cy = height / 2;
       const isMobile = window.innerWidth <= 768;
-      const globeRadius = Math.min(width, height) * (isMobile ? 0.46 : 0.35);
+      const globeRadius = Math.min(width, height) * (isMobile ? 0.53 : 0.35);
 
       const baseGrad = ctx.createRadialGradient(cx - 30, cy - 30, 10, cx, cy, globeRadius);
       baseGrad.addColorStop(0, '#0a234f');
@@ -673,7 +673,7 @@ const Projects = () => {
       const my = e.clientY - rect.top;
       const cx = width / 2;
       const cy = height / 2;
-      const globeRadius = Math.min(width, height) * (isMobile ? 0.46 : 0.35);
+      const globeRadius = Math.min(width, height) * (isMobile ? 0.53 : 0.35);
 
       let closest = null;
       projectsData.forEach(p => {
