@@ -382,7 +382,9 @@ const Projects = () => {
       targetScrollProgressRef.current = progress;
       scrollProgressRef.current = progress;
 
-      if (progress > 0.05) {
+      const isMobile = window.innerWidth <= 768;
+      const disableThreshold = isMobile ? 0.35 : 0.05;
+      if (progress > disableThreshold) {
         if (hoverTimeoutRef.current) {
           clearTimeout(hoverTimeoutRef.current);
           hoverTimeoutRef.current = null;
@@ -406,7 +408,8 @@ const Projects = () => {
 
       const cx = width / 2;
       const cy = height / 2;
-      const globeRadius = Math.min(width, height) * 0.35;
+      const isMobile = window.innerWidth <= 768;
+      const globeRadius = Math.min(width, height) * (isMobile ? 0.46 : 0.35);
 
       const baseGrad = ctx.createRadialGradient(cx - 30, cy - 30, 10, cx, cy, globeRadius);
       baseGrad.addColorStop(0, '#0a234f');
@@ -644,7 +647,9 @@ const Projects = () => {
     animate(performance.now());
 
     canvas.addEventListener('mousemove', (e) => {
-      if (scrollProgressRef.current > 0.05) {
+      const isMobile = window.innerWidth <= 768;
+      const disableThreshold = isMobile ? 0.35 : 0.05;
+      if (scrollProgressRef.current > disableThreshold) {
         if (hoverTimeoutRef.current) {
           clearTimeout(hoverTimeoutRef.current);
           hoverTimeoutRef.current = null;
@@ -660,7 +665,7 @@ const Projects = () => {
       const my = e.clientY - rect.top;
       const cx = width / 2;
       const cy = height / 2;
-      const globeRadius = Math.min(width, height) * 0.35;
+      const globeRadius = Math.min(width, height) * (isMobile ? 0.46 : 0.35);
 
       let closest = null;
       projectsData.forEach(p => {
